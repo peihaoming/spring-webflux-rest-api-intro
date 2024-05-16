@@ -1,0 +1,18 @@
+configuration:
+  debug: false
+  springProperty:
+    - name: LOGS
+      source: logging.path
+  appender:
+    console:
+      name: Console
+      target: SYSTEM_OUT
+      encoder:
+        pattern: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  root:
+    level: info
+    appender-ref:
+      ref: Console
+  logger:
+    com.gatheca.reactivedemo:
+      level: debug
